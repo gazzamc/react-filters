@@ -3,12 +3,14 @@ import './App.css';
 import Header from './components/header/header';
 import Upload from './components/upload/upload';
 import Preview from './components/preview/preview';
+import SetFilters from './components/filters/setFilters';
 
 export default class Filters extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      image: null
+      image: null,
+      canvas: {}
     };
   };
 
@@ -16,12 +18,17 @@ export default class Filters extends Component {
     this.setState({image: data});
   };
 
+  canvasCallback = (data) => {
+    this.setState({canvas: data});
+  };
+
   render() {
     return (
-      <div className="container-main">
+      <div className="nav">
           <Header />
           <div className="container-main">
-            <Preview image={this.state.image}/>
+            <SetFilters canvas={this.state.canvas}/>
+            <Preview image={this.state.image} callbackFromParent={this.canvasCallback}/>
             <Upload callbackFromParent={this.imageCallback}/>
           </div>
       </div>

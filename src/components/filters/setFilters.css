@@ -1,0 +1,67 @@
+.setfilters {
+    position: relative;
+    background-color: orange;
+    float: left;
+    width: 20vw;
+    height: 100vh;
+    z-index: 100;
+    text-align: center;
+}
+
+.btn.optionsBtn{
+    position: absolute;
+    top: 1vh;
+    right: 1vh;
+}
+
+.btn.filterBtn{
+    position: relative;
+    left: 13vh;
+    border-radius: 5% 4% 5% 4%;
+    display: list-item;
+    width: 30%;
+    height: 8vh;
+    padding: 3%;
+    margin-top: 5%;
+    background-color: rgba(0, 140, 0, 1);
+    font-size: large;
+    line-height: 30%;
+}
+
+.btn.filterBtn.active{
+    background-color: rgba(255, 0, 0, 1);
+}
+
+.sliderCon{
+    position: absolute;
+    bottom: 10vh;
+    left: 45vw;
+    margin-top: 15vh;
+    z-index: 130;
+}
+
+.sliderConFull{
+    left: 60vw;
+}
+
+.slider{
+    width: 15vw;
+}
+
+h2{
+    text-align: center;
+}
+
+.btnDiv {
+    position: relative;
+    top: 5%;
+}
+
+@keyframes slideOut {
+    from {left: 0vw;}
+    to {left: -18vw;}
+  }
+
+.slide {
+    animation: slideOut 1s linear 0s 1 alternate both;
+  }

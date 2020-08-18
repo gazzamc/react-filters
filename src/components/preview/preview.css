@@ -1,1 +1,5 @@
-.preview {}
+.preview {
+    position: relative;
+    background-color: green;
+    z-index: 10;
+}

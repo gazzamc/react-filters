@@ -13,12 +13,16 @@ export default class Preview extends Component {
   }
 
   componentDidMount() {
+
+    console.log(document.getElementById("parent").width);
     /* Create Canvas */
     const canvas = new fabric.Canvas('c', {
-      width: 300,
-      height: 300
+      width: window.innerWidth,
+      height: window.innerHeight,
+      backgroundColor: 'rgba(0,0,0, 0.3)'
     });
-    this.setState({canvas: canvas})
+    this.setState({canvas: canvas});
+    this.props.callbackFromParent(canvas);
   }
 
   componentDidUpdate(image) {
@@ -39,7 +43,7 @@ export default class Preview extends Component {
 
   render() {
     return (
-      <div className="container right">
+      <div className="preview" id="parent">
         <canvas id="c" />
       </div>
     );

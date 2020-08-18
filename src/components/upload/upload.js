@@ -37,7 +37,7 @@ export default class Upload extends Component {
 
   render() {
     return (
-      <div className="container left">
+      <div className="upload">
         <label 
           ref={this.btn}
           className="btn btn-upload"
@@ -54,7 +54,7 @@ export default class Upload extends Component {
         </label>
         <button 
           ref={this.delete} 
-          className="btn" 
+          className="btn deleteBtn" 
           hidden={true}
           onClick={this.deleteImage}
           >
