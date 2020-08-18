@@ -17,7 +17,8 @@ export default class Upload extends Component {
   }
 
   handleClick = (e) => {
-    if(e.target.files.length === 0){
+    if(e.target.files.length === 0 || 
+      e.target.files[0].type.split("/")[0] !== "image"){
       return false;
     }
 
