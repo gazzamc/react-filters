@@ -18,10 +18,12 @@ export default class Filters extends Component {
 
   render() {
     return (
-      <div>
-        <Header />
-        <Upload callbackFromParent={this.imageCallback}/>
-        <Preview image={this.state.image}/>
+      <div className="container-main">
+          <Header />
+          <div className="container-main">
+            <Preview image={this.state.image}/>
+            <Upload callbackFromParent={this.imageCallback}/>
+          </div>
       </div>
     );
   }

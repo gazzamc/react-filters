@@ -1,3 +1,8 @@
+html, body{
+  margin: 0;
+  padding: 0;
+}
+
 .App {
   text-align: center;
 }
@@ -35,4 +40,45 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+
+/* Primary Btn */
+.btn{
+  border: 1px solid rgba(0, 0, 0, 0.4);
+  border-radius: 50%;
+  height: 25px;
+  width: 25px;
+  background: rgba(0, 0, 0, 0.3);
+  color: #fff;
+}
+
+.btn:hover{
+  opacity: 0.9;
+}
+
+.btn:focus{
+  outline:0;
+}
+
+.container-main{
+  margin: 0 1% 0 1%;
+  background-color: teal;
+}
+
+.container{
+  margin: 1%;
+  padding: 1%;
+  border: 1px solid #282c34;
+  text-align: center;
+}
+
+.container.right{
+  position: relative;
+  float: right;
+}
+
+.container.left{
+  position: relative;
+  float: left;
 }

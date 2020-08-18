@@ -1,5 +1,4 @@
 import React, { Component, createRef } from 'react';
-import PropTypes from 'prop-types';
 import "./upload.css";
 
 export default class Upload extends Component {
@@ -18,7 +17,7 @@ export default class Upload extends Component {
   }
 
   handleClick = (e) => {
-    if(e.target.files.length == 0){
+    if(e.target.files.length === 0){
       return false;
     }
 
@@ -37,7 +36,7 @@ export default class Upload extends Component {
 
   render() {
     return (
-      <div>
+      <div className="container left">
         <label 
           ref={this.btn}
           className="btn btn-upload"
