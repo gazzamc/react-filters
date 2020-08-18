@@ -1,0 +1,31 @@
+.upload {}
+
+/* Primary Btn */
+.btn{
+    border: 1px solid rgba(0, 0, 0, 0.4);
+    border-radius: 50%;
+    height: 25px;
+    width: 25px;
+    background: rgba(0, 0, 0, 0.3);
+    color: #fff;
+}
+
+.btn:hover{
+    opacity: 0.9;
+}
+
+.btn:focus{
+    outline:0;
+}
+
+/* Upload Btn */
+.btn.btn-upload{
+    position: absolute;
+    background-color: seagreen;
+    right: 10%;
+    height: 5%;
+    width: 5%;
+    font-size: 150%;
+    text-align: center;
+    line-height: 160%;
+}
