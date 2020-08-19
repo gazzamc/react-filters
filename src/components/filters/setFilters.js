@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { fabric } from 'fabric';
 import './setFilters.css';
+import Download from '../download/download';
 
 export default class SetFilters extends Component {
   constructor(props) {
@@ -157,6 +158,7 @@ export default class SetFilters extends Component {
           >
             Delete
           </button>
+          <Download canvas={this.getCanvas()}/>
         </div>
         <div className="sliderCon" id="slider">
           <h2>50</h2>
