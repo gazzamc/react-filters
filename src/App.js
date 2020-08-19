@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import './App.css';
-import Header from './components/header/header';
 import Upload from './components/upload/upload';
 import Preview from './components/preview/preview';
 import SetFilters from './components/filters/setFilters';
@@ -24,8 +23,7 @@ export default class Filters extends Component {
 
   render() {
     return (
-      <div className="nav">
-          <Header />
+      <div>
           <div className="container-main">
             <SetFilters canvas={this.state.canvas}/>
             <Preview image={this.state.image} callbackFromParent={this.canvasCallback}/>

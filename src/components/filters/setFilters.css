@@ -32,6 +32,10 @@
     background-color: rgba(255, 0, 0, 1);
 }
 
+.btn.deleteFilBtn {
+    background-color: rgba(255, 0, 0, 1);
+}
+
 .sliderCon{
     position: absolute;
     bottom: 10vh;
