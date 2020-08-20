@@ -13,8 +13,7 @@ export default class Preview extends Component {
   }
 
   componentDidMount() {
-
-    console.log(document.getElementById("parent").width);
+    
     /* Create Canvas */
     const canvas = new fabric.Canvas('c', {
       width: window.innerWidth,
