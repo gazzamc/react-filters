@@ -6,6 +6,10 @@ export default class Download extends Component {
         let option = document.getElementById("dlOpt").value;
         let image = this.props.canvas.getObjects("image")[0];
         let link = document.createElement('a');
+        
+        if(image === undefined){
+            return;
+        }
 
         link.href = image.toDataURL();
         link.download = "image." + option;

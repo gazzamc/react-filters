@@ -24,17 +24,15 @@ export default class Preview extends Component {
     this.props.callbackFromParent(canvas);
   }
 
-  componentDidUpdate(image) {
+  componentDidUpdate() {
     let canvas = this.state.canvas;
 
     if(this.props.image !== this.prevImg.current){
-      /* Add Image to Canvas */
       let imgs = this.props.image;
       fabric.Image.fromURL(imgs, function(oImg) {
         canvas.add(oImg);
       });
     } else {
-      /* Remove Image*/
       let getimage = canvas.getObjects("image");
       canvas.remove(getimage[0]);
     }

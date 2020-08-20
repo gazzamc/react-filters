@@ -38,7 +38,7 @@ export default class SetFilters extends Component {
     if(image === null || this.state.currfilter === ''){
       return;
     }
-
+    
     if(filter !== "blur"){
       let matrix;
       let rem;
@@ -73,7 +73,7 @@ export default class SetFilters extends Component {
         }
       };
 
-      image.filters[0]["matrix"] = matrix;
+      image.filters[idx]["matrix"] = matrix;
     } else{
 
       image.filters[idx][filter] = amount;
@@ -81,11 +81,10 @@ export default class SetFilters extends Component {
     this.refreshCanvas(image, canvas);
   };
 
-  addFilter = (e) => {
+  addFilter = (btnclicked) => {
     let image = this.getImage();
     let canvas = this.getCanvas();
     let f = fabric.Image.filters;
-    let btnclicked = e.target.innerHTML.toLowerCase();
     let filter;
 
     if(image == null){
@@ -94,17 +93,15 @@ export default class SetFilters extends Component {
 
     switch(btnclicked){
       case "vintage":
-        filter = new f.Vintage();
+        filter = new f.Vintage({ vintage: 0 });
         break;
 
       case "sepia":
-        filter = new f.Sepia();
+        filter = new f.Sepia({ sepia: 0 });
         break; 
 
       default:
-        filter = new f.Blur({
-          blur: 0.5
-        });
+        filter = new f.Blur({ blur: 0.5 });
     }
 
     if(image.filters.length === 0){
@@ -119,6 +116,31 @@ export default class SetFilters extends Component {
     this.refreshCanvas(image, canvas);
   };
 
+  selectFilter = (e) => {
+    let btnclicked = e.target.innerHTML.toLowerCase();
+    let image = this.getImage();
+    let exists = false;
+
+    if(image === null){
+      return;
+
+    } else if(image.filters.length === 0){
+      this.addFilter(btnclicked);
+    } else{
+      for(let i = 0; i < image.filters.length; i++){
+          if(image.filters[i][btnclicked] !== undefined){
+            this.setState ({ curridx: i, currfilter: btnclicked});
+            exists = true;
+            break;
+          }
+        }
+
+        if(!exists){
+          this.addFilter(btnclicked);
+        }
+      };
+    };
+
   removeFilter = () => {
     let canvas = this.getCanvas();
     let image = this.getImage();
@@ -126,15 +148,10 @@ export default class SetFilters extends Component {
     if(image === null || this.state.currfilter === ''){
       return;
     }
-
-    image.filters.pop(this.state.curridx);
+    image.filters.splice(this.state.curridx, 1);
 
     if(image.filters.length === 0){
-      this.setState({curridx : 0});
-      this.setState({ currfilter: ''});
-    } else {
-      let curr = this.state.curridx;
-      this.setState({curridx : curr - 1});
+      this.setState({curridx : 0, currfilter: ''});
     }
 
     this.refreshCanvas(image, canvas);
@@ -172,19 +189,19 @@ export default class SetFilters extends Component {
         <div className="btnDiv">
           <button 
           className="btn filterBtn"
-          onClick={this.addFilter}
+          onClick={this.selectFilter}
           >
             Vintage
           </button>
           <button 
             className="btn filterBtn"
-            onClick={this.addFilter}
+            onClick={this.selectFilter}
           >
             Sepia
           </button>
           <button 
           className="btn filterBtn"
-          onClick={this.addFilter}
+          onClick={this.selectFilter}
           >
             Blur
           </button>
