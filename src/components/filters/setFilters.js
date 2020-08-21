@@ -3,7 +3,6 @@ import { fabric } from 'fabric';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faTrashAlt } from '@fortawesome/free-solid-svg-icons'
 import './setFilters.css';
-import Download from '../download/download';
 
 export default class SetFilters extends Component {
   constructor(props) {
@@ -131,10 +130,14 @@ export default class SetFilters extends Component {
 
     if(image === null){
       return;
+    }
 
-    } else if(image.filters.length === 0){
+    this.setActiveBtn(e);
+    
+    if(image.filters.length === 0){
       this.addFilter(btnclicked);
     } else{
+
       for(let i = 0; i < image.filters.length; i++){
           if(image.filters[i][btnclicked] !== undefined){
             this.setState ({ curridx: i, currfilter: btnclicked});
@@ -143,7 +146,7 @@ export default class SetFilters extends Component {
           }
         }
 
-        if(!exists){
+      if(!exists){
           this.addFilter(btnclicked);
         }
       };
@@ -158,7 +161,7 @@ export default class SetFilters extends Component {
       return;
     }
 
-    if(btnclicked == "delBtnAll"){
+    if(btnclicked === "delBtnAll"){
       for(let i = 0; i < image.filters.length; i++){
         image.filters.splice(i);
       }
@@ -170,12 +173,21 @@ export default class SetFilters extends Component {
       this.setState({curridx : 0, currfilter: ''});
     }
 
+    this.removeActiveBtn();
     this.refreshCanvas(image, canvas);
   }
 
-  switchBtn = (e) =>{
-    let btn = e.target;
-    btn.classList.toggle('active');
+  removeActiveBtn = () =>{
+    let currActBtn = document.getElementsByClassName("active");
+    for(let i = 0; i < currActBtn.length; i++){
+      currActBtn[i].classList.toggle("active");
+    }
+  };
+
+  setActiveBtn = (btn) =>{
+    let clickedBtn = btn.target;
+    this.removeActiveBtn();
+    clickedBtn.classList.toggle("active");
   };
 
   changeSlideVal = (e) =>{
