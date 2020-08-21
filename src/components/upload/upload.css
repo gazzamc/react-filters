@@ -20,3 +20,46 @@
     right: 4vw;
     z-index: 110;
 }
+
+@media (min-width: 576px) {  
+    .btn.btn-upload{
+        left: 48vw;
+    }
+}
+
+@media (min-width: 768px) {  
+    .btn.btn-upload{
+        left: 47vw;
+    }
+}
+
+@media (min-width: 992px) { 
+    .btn.btn-upload{
+        left: 48vw;
+    }
+
+    .btn.deleteBtn{
+        top: 2vh;
+        right: 4vw;
+        height: 2.5em;
+        width: 2.5em;
+    } 
+}
+
+@media (min-width: 1200px) {  
+    .btn.btn-upload{
+        left: 47vw;
+        height: 2em;
+        width: 2em;
+        font-size: 4em;
+        text-align: center;
+        line-height: 175%;
+    }
+    
+    .btn.deleteBtn{
+        top: 2vh;
+        right: 4vw;
+        height: 3em;
+        width: 3em;
+    }  
+}

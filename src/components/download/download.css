@@ -50,3 +50,84 @@ select:focus > option:checked {
     margin: 0;
     padding: 0;
 }
+
+#downIcon:active {
+    color: rgba(187, 134, 252, 1);
+}
+
+@media (min-width: 425px) {  
+    .download{
+        bottom: 34vh;
+        left: 3vw;
+        margin-bottom: 4%;
+    }    
+
+    /* Icons */
+    #downIcon{
+        font-size: 1em;
+    }
+}
+
+@media (min-width: 768px) {  
+    .drop-down {
+        width: 11vw;
+        top: -1vh;
+    }
+
+    .download{
+        bottom: 32vh;
+        left: 7vw;
+        margin-bottom: 5%;
+    } 
+
+    #downIcon{
+        font-size: 1.3em;
+    }
+}
+
+@media (min-width: 1024px) {  
+    .drop-down {
+        width: 8vw;
+        top: -1vh;
+    }
+
+    .download{
+        bottom: 31vh;
+        left: 8vw;
+        margin-bottom: 4%;
+    }    
+
+    /* Icons */
+    #downIcon{
+        font-size: 1.5em;
+    }
+}
+
+@media (min-width: 1440px) { 
+    .drop-down {
+        width: 7vw;
+    }
+
+    .download{
+        bottom: 27vh;
+        left: 12vw;
+        margin-bottom: 3%;
+    }    
+
+    /* Icons */
+    #downIcon{
+        font-size: 2em;
+    }
+}
+
+@media (min-width: 2560px) {  
+    .drop-down {
+        width: 5vw;
+        font-size: 1.5em;
+    }
+
+    .download{
+        bottom: 26vh;
+        left: 14vw;
+    }    
+}

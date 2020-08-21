@@ -12,9 +12,11 @@
 .btnDiv {
     position: relative;
     top: 6vh;
-    overflow: scroll;
     white-space: nowrap;
     left: 2vw;
+    overflow-y: scroll;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
 }
 
 .btn.filterBtn{
@@ -24,7 +26,7 @@
     height: 20vh;
     margin: 2% 0 0 2%;
     background-color: rgba(187, 134, 252, 1);
-    font-size: large;
+    font-size: 1.5em;
     line-height: 30%;
 }
 
@@ -41,13 +43,17 @@
 }
 
 /* Slider */
-
 .sliderCon{
     position: relative;
     height: 5vh;
     background-color: rgba(18, 18, 18, 0.5);
     padding-top: 2vh;
-    animation-name: slideUp;
+}
+
+.slider{
+    position: relative;
+    width: 60vw;
+    left: 2vw;
 }
 
 /* Icons */
@@ -58,8 +64,71 @@
     color: rgba(255, 255, 255, 0.8);
 }
 
-.slider{
-    position: relative;
-    width: 60vw;
-    left: 2vw;
+#delIcon:active {
+    color: rgba(187, 134, 252, 1);
+}
+
+@media (min-width: 768px) {  
+    .btnDiv {
+        top: 7vh;
+        left: -1vw;
+    }
+
+    .btn.filterBtn{
+        width: 20%;
+        height: 15vh;
+        font-size: 2em;
+    } 
+
+    /* Slider */
+    .slider{
+        width: 30vw;
+        left: 1vw;
+    }
+
+    /* Icons */
+    #delIcon{
+        right: 17vw;
+        font-size: 1.5em;
+    }
+}
+
+
+@media (min-width: 1024px) {  
+    .btnDiv {
+        top: 3vh;
+        left: 1vw;
+    }
+
+    .btn.filterBtn{
+        height: 20vh;
+        font-size: 3em;
+    } 
+
+    /* Slider */
+    .slider{
+        width: 30vw;
+        left: 1vw;
+    }
+
+    /* Icons */
+    #delIcon{
+        right: 17vw;
+    }
+}
+
+@media (min-width: 1200px) {  
+    .btnDiv {
+        left: 1vw;
+    }
+
+    /* Slider */
+    .slider{
+        width: 30vw;
+    }
+
+    /* Icons */
+    #delIcon{
+        font-size: 2em;
+    }
 }
