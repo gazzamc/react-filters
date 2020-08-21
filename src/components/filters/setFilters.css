@@ -1,31 +1,35 @@
 .setfilters {
     position: relative;
-    background-color: orange;
-    float: left;
-    width: 20vw;
-    height: 100vh;
-    z-index: 100;
+    background-color: rgba(0, 0, 0, 1);
+    width: 100vw;
+    height: 40vh;
     text-align: center;
+    z-index: 100;
 }
 
-.btn.optionsBtn{
-    position: absolute;
-    top: 1vh;
-    right: 1vh;
+/* buttons */
+
+.btnDiv {
+    position: relative;
+    top: 6vh;
+    overflow: scroll;
+    white-space: nowrap;
+    left: 2vw;
 }
 
 .btn.filterBtn{
     position: relative;
-    left: 13vh;
     border-radius: 5% 4% 5% 4%;
-    display: list-item;
-    width: 30%;
-    height: 8vh;
-    padding: 3%;
-    margin-top: 5%;
-    background-color: rgba(0, 140, 0, 1);
+    width: 50%;
+    height: 20vh;
+    margin: 2% 0 0 2%;
+    background-color: rgba(187, 134, 252, 1);
     font-size: large;
     line-height: 30%;
+}
+
+.btn.filterBtn:active{
+    border: 5px solid rgba(55, 0, 179, 0.8);
 }
 
 .btn.filterBtn.active{
@@ -33,39 +37,29 @@
 }
 
 .btn.deleteFilBtn {
-    background-color: rgba(255, 0, 0, 1);
+    background-color: rgba(207, 102, 121, 0.8);
 }
+
+/* Slider */
 
 .sliderCon{
-    position: absolute;
-    bottom: 10vh;
-    left: 45vw;
-    margin-top: 15vh;
-    z-index: 130;
+    position: relative;
+    height: 5vh;
+    background-color: rgba(18, 18, 18, 0.5);
+    padding-top: 2vh;
+    animation-name: slideUp;
 }
 
-.sliderConFull{
-    left: 60vw;
+/* Icons */
+#delIcon{
+    position: relative;
+    float: right;
+    right: 8vw;
+    color: rgba(255, 255, 255, 0.8);
 }
 
 .slider{
-    width: 15vw;
-}
-
-h2{
-    text-align: center;
-}
-
-.btnDiv {
     position: relative;
-    top: 5%;
+    width: 60vw;
+    left: 2vw;
 }
-
-@keyframes slideOut {
-    from {left: 0vw;}
-    to {left: -18vw;}
-  }
-
-.slide {
-    animation: slideOut 1s linear 0s 1 alternate both;
-  }

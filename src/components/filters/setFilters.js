@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import { fabric } from 'fabric';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faTrashAlt } from '@fortawesome/free-solid-svg-icons'
 import './setFilters.css';
 import Download from '../download/download';
 
@@ -116,7 +118,13 @@ export default class SetFilters extends Component {
     this.refreshCanvas(image, canvas);
   };
 
+  toggleSlider = () => {
+    let sliderDiv = document.getElementById("slider");
+    sliderDiv.classList.toggle('slide');
+  };
+
   selectFilter = (e) => {
+    this.toggleSlider();
     let btnclicked = e.target.innerHTML.toLowerCase();
     let image = this.getImage();
     let exists = false;
@@ -141,14 +149,22 @@ export default class SetFilters extends Component {
       };
     };
 
-  removeFilter = () => {
+  removeFilter = (e) => {
+    let btnclicked = e.target.id;
     let canvas = this.getCanvas();
     let image = this.getImage();
 
     if(image === null || this.state.currfilter === ''){
       return;
     }
-    image.filters.splice(this.state.curridx, 1);
+
+    if(btnclicked == "delBtnAll"){
+      for(let i = 0; i < image.filters.length; i++){
+        image.filters.splice(i);
+      }
+    } else{
+      image.filters.splice(this.state.curridx, 1);
+    }
 
     if(image.filters.length === 0){
       this.setState({curridx : 0, currfilter: ''});
@@ -163,29 +179,28 @@ export default class SetFilters extends Component {
   };
 
   changeSlideVal = (e) =>{
-    let slider = e.target;
-    slider.previousSibling.innerHTML = e.target.value;
     this.setState({ sliderVal: e.target.value});
     this.updateFilter(this.state.curridx, this.state.currfilter);
-  };
-
-  toggleMenu = (e) => {
-    let parent = e.target.parentElement;
-    let slider = document.getElementById("slider");
-    slider.classList.toggle('sliderConFull');
-    parent.classList.toggle('slide');
   };
 
   render() {
     return (
       <div className="setfilters">
-        <h1>Filter Options</h1>
-        <button 
-        className="btn optionsBtn"
-        onClick={this.toggleMenu}
-        >
-          X
-        </button>
+        <div className="sliderCon" id="slider">
+          <input 
+            type="range" 
+            min="0" 
+            max="100" 
+            className="slider"
+            value={this.state.sliderVal} 
+            onChange={this.changeSlideVal}
+            step="1" />
+          <FontAwesomeIcon 
+            icon={faTrashAlt} 
+            id="delIcon" 
+            onClick={this.removeFilter}
+          />
+        </div>
         <div className="btnDiv">
           <button 
           className="btn filterBtn"
@@ -207,22 +222,11 @@ export default class SetFilters extends Component {
           </button>
           <button 
           className="btn filterBtn deleteFilBtn"
+          id="delBtnAll"
           onClick={this.removeFilter}
           >
-            Delete
+            Normal
           </button>
-          <Download canvas={this.getCanvas()}/>
-        </div>
-        <div className="sliderCon" id="slider">
-          <h2>50</h2>
-          <input 
-            type="range" 
-            min="0" 
-            max="100" 
-            className="slider"
-            value={this.state.sliderVal} 
-            onChange={this.changeSlideVal}
-            step="1" />
         </div>
       </div>
     );

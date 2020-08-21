@@ -1,9 +1,52 @@
 .download{
-    position: relative;
-    top: 25vh;
+    position: absolute;
+    bottom: 33vh;
+    left: 2vw;
+    margin-bottom: 3%;
+    padding: 0;
+    z-index: 110;
 }
 
 .drop-down {
-    width: 3vw;
-    font-size: 1em;
+    position: relative;
+    float: left;
+    top: -1vh;
+    width: 5vw;
+    font-size: 1rem;
+    margin: 0;
+    padding: 1vw;
+    background-color: transparent;
+    border-color: transparent;
+    color: rgba(255, 255, 255, 9);
+}
+
+.drop-down:active, .drop-down::after, 
+.drop-down:hover, .drop-down:focus  {
+    border-color: transparent;
+    box-shadow: none!important;
+}
+
+select option {
+    margin: 40px;
+    background: rgba(0, 0, 0, 0.3);
+    color: #fff;
+    text-shadow: none;
+}
+
+select option:not(:checked) { 
+    background: black;
+}
+
+select:focus > option:checked { 
+    background: #000 !important;
+}
+
+/* icon */
+#downIcon {
+    position: relative;
+    float: left;
+    left: 2vw;
+    color: rgba(255, 255, 255, 0.8);
+    margin: 0;
+    padding: 0;
 }

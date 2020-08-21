@@ -1,5 +1,17 @@
 .preview {
     position: relative;
-    background-color: green;
+    background-color: rgba(18, 18, 18, 1);
+    height: 60vh;
     z-index: 10;
+}
+
+.zoomDiv {
+    position: absolute;
+    top: 10vh;
+    left: -10vw;
+    z-index: 120;
+}
+
+.zoomSlider {
+    transform: rotate(270deg);
 }

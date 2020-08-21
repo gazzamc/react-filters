@@ -22,8 +22,8 @@ export default class Upload extends Component {
       return false;
     }
 
-    const btn = this.btn.current;
-    const deleteBtn = this.delete.current;
+    let btn = this.btn.current;
+    let deleteBtn = this.delete.current;
     let file = e.target.files[0];
     let reader = new FileReader();
 

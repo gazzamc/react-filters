@@ -1,23 +1,22 @@
-.upload {}
-
 /* Upload Btn */
 .btn.btn-upload{
     position: absolute;
-    top: 40%;
-    left: 50%;
-    background-color: seagreen;
-    height: 50px;
-    width: 50px;
+    top: 25vh;
+    left: 42vw;
+    background-color: rgba(187, 134, 252, 1);
+    height: 1.5em;
+    width: 1.5em;
     font-size: 3em;
     text-align: center;
-    line-height: 90%;
+    line-height: 125%;
     z-index: 110;
+    border: 1px solid rgba(18, 18, 18, 1);
 }
 
 .btn.deleteBtn{
     position: absolute;
-    background-color: red;
-    top: 4vh;
+    background-color: rgba(207, 102, 121, 0.8);
+    top: 2vh;
     right: 4vw;
     z-index: 110;
 }

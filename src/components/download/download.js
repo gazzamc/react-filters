@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faDownload } from '@fortawesome/free-solid-svg-icons'
 import './download.css';
 
 export default class Download extends Component {
@@ -25,12 +27,7 @@ export default class Download extends Component {
                 <option value="png">PNG</option>
                 <option value="jpg">JPG</option>
             </select>
-            <button 
-                className="btn filterBtn"
-                onClick={this.download}
-            >
-                Download 
-            </button>
+            <FontAwesomeIcon icon={faDownload} id="downIcon" onClick={this.download}/>
         </div>
         );
   }

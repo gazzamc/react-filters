@@ -1,29 +1,38 @@
-/* Primary Btn */
-.btn{
-  border: 1px solid rgba(0, 0, 0, 0.4);
-  border-radius: 50%;
-  height: 25px;
-  width: 25px;
-  background: rgba(0, 0, 0, 0.3);
-  color: #fff;
+html, body{
+  margin: 0;
+  padding: 0;
 }
 
-.btn:hover{
-  opacity: 0.9;
+h1, h2 {
+  margin: 0;
 }
+  
+  /* Primary Btn */
+  .btn{
+    border: 1px solid rgba(0, 0, 0, 0.4);
+    border-radius: 50%;
+    height: 25px;
+    width: 25px;
+    background: rgba(0, 0, 0, 0.3);
+    color: #fff;
+  }
 
-.btn:focus{
-  outline:0;
-}
+  .btn:hover{
+    opacity: 0.9;
+  }
 
-.container-main{
-  height: 100%;
-  overflow: hidden;
-}
+  .btn:focus{
+    outline:0;
+  }
 
-.container{
-  margin: 1%;
-  padding: 1%;
-  border: 1px solid #282c34;
-  text-align: center;
-}
+  .container-main{
+    height: 100%;
+    overflow: hidden;
+  }
+
+  .container{
+    margin: 1%;
+    padding: 1%;
+    border: 1px solid #282c34;
+    text-align: center;
+  }
