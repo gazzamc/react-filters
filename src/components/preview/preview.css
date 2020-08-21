@@ -9,11 +9,13 @@
     position: absolute;
     top: 10vh;
     left: -10vw;
+    -moz-left: 0vw;
     z-index: 120;
 }
 
 .zoomSlider {
     transform: rotate(270deg);
+    -moz-transform: rotate(0deg);
 }
 
 

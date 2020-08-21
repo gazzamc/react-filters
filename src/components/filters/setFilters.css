@@ -15,8 +15,6 @@
     white-space: nowrap;
     left: 2vw;
     overflow-y: scroll;
-    scrollbar-width: none;
-    -ms-overflow-style: none;
     padding-bottom: 5%;
 }
 
